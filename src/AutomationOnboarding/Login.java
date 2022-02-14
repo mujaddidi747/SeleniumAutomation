@@ -31,14 +31,10 @@ public class Login {
 	////////////////////////////////////////////////////////
 
 	
-	
-	@Test(dataProvider = "registrationGroup" , dataProviderClass = dataProvider.class)
-	
-	public  static void registrationSelectionFunction(String dataValues[]) throws InterruptedException, IOException {
-	System.setProperty("webdriver.chrome.driver","D:/AutomationProject/chromedriver_win32/chromedriver.exe");
-		
-		//opt.addArguments("--headless");
-		
+	@BeforeMethod
+	  public void setUp() {
+      	 
+		System.setProperty("webdriver.chrome.driver","D:/AutomationProject/chromedriver_win32/chromedriver.exe");
 		driver = new ChromeDriver();
 		
 		driver.manage().window().maximize();
@@ -54,6 +50,22 @@ public class Login {
 		driver.findElement(
 				By.xpath("//*[@id='consumerForm']/li[3]/table/tbody/tr/td[1]/input"))
 				.click();
+		
+		//opt.addArguments("--headless");
+      	 
+	  }
+	
+	
+	
+	@Test(dataProvider = "registrationGroup" , dataProviderClass = dataProvider.class)
+	
+	public  static void registrationSelectionFunction(String dataValues[]) throws InterruptedException, IOException {
+		
+	
+		
+		
+		
+	
 		//Test Common
 		
 		System.out.println("*** Into the CustomerRegistration ***");
@@ -80,7 +92,7 @@ public class Login {
 				|| customerType.equalsIgnoreCase("Merchant Headquarter")){
 		
 			cstOnboard.onBoarding(driver,dataValues[0], dataValues[1], dataValues[2], dataValues[3], 
-					dataValues[4], dataValues[5], dataValues[6], dataValues[7], dataValues[8], dataValues[9],dataValues[10]);  
+					dataValues[4], dataValues[5], dataValues[6], dataValues[7], dataValues[8], dataValues[9],dataValues[10], dataValues[11], dataValues[12], dataValues[13]);  
 			
 		}
 		
@@ -100,7 +112,7 @@ public class Login {
 					dataValues[7],  dataValues[8],  dataValues[9],  dataValues[10],  dataValues[11],  dataValues[12],  dataValues[13]
 					,  dataValues[14], dataValues[15],  dataValues[16],  dataValues[17],  dataValues[18],
 					dataValues[19],  dataValues[20],  dataValues[21],  dataValues[22],  dataValues[23],
-					dataValues[24],dataValues[25]);  
+					dataValues[24],dataValues[25], dataValues[26], dataValues[27], dataValues[28]);  
 			
 		}
 		
