@@ -1,6 +1,5 @@
 package AutomationOnboarding;
 
-
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -9,9 +8,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 
@@ -35,7 +34,7 @@ public class Login {
 	  public void setUp() {
       	 
 		System.setProperty("webdriver.chrome.driver","D:/AutomationProject/chromedriver_win32/chromedriver.exe");
-		driver = new ChromeDriver();
+		driver = new ChromeDriver();  // initialize driver
 		
 		driver.manage().window().maximize();
 
@@ -60,11 +59,7 @@ public class Login {
 	@Test(dataProvider = "registrationGroup" , dataProviderClass = dataProvider.class)
 	
 	public  static void registrationSelectionFunction(String dataValues[]) throws InterruptedException, IOException {
-		
-	
-		
-		
-		
+
 	
 		//Test Common
 		
@@ -77,7 +72,9 @@ public class Login {
 		
 		// calling classes
 
-		CustomerOnboarding cstOnboard = new CustomerOnboarding();
+		CustomerOnboarding cstOnboard;
+		cstOnboard = new CustomerOnboarding();
+	
 		
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
@@ -92,7 +89,8 @@ public class Login {
 				|| customerType.equalsIgnoreCase("Merchant Headquarter")){
 		
 			cstOnboard.onBoarding(driver,dataValues[0], dataValues[1], dataValues[2], dataValues[3], 
-					dataValues[4], dataValues[5], dataValues[6], dataValues[7], dataValues[8], dataValues[9],dataValues[10], dataValues[11], dataValues[12], dataValues[13]);  
+					dataValues[4], dataValues[5], dataValues[6], dataValues[7], dataValues[8], dataValues[9]
+							,dataValues[10], dataValues[11], dataValues[12], dataValues[13], dataValues[14], dataValues[15], dataValues[16]);  
 			
 		}
 		
@@ -112,7 +110,7 @@ public class Login {
 					dataValues[7],  dataValues[8],  dataValues[9],  dataValues[10],  dataValues[11],  dataValues[12],  dataValues[13]
 					,  dataValues[14], dataValues[15],  dataValues[16],  dataValues[17],  dataValues[18],
 					dataValues[19],  dataValues[20],  dataValues[21],  dataValues[22],  dataValues[23],
-					dataValues[24],dataValues[25], dataValues[26], dataValues[27], dataValues[28]);  
+					dataValues[24],dataValues[25], dataValues[26], dataValues[27], dataValues[28], dataValues[29], dataValues[30], dataValues[31]);  
 			
 		}
 		
@@ -128,7 +126,7 @@ public class Login {
 					dataValues[11],  dataValues[12],  dataValues[13]
 					,dataValues[14], dataValues[15],  dataValues[16],  dataValues[17],  dataValues[18],
 					dataValues[19],  dataValues[20],  dataValues[21],  dataValues[22],  dataValues[23],
-					dataValues[24],dataValues[25],dataValues[26],dataValues[27],dataValues[28],dataValues[29]);  
+					dataValues[24],dataValues[25],dataValues[26],dataValues[27],dataValues[28],dataValues[29], dataValues[30]);  
 			 
 		}	
 	
@@ -138,10 +136,15 @@ public class Login {
 		((JavascriptExecutor)driver).executeScript("scroll(0,0)");
 		Utility.W2F(driver);
 
-	  //  driver.quit();
+	  
 	}
 
-	
+	@AfterMethod
+	public static void testlogout(){
+
+		  driver.quit();
+		
+	}
 	
 
 }

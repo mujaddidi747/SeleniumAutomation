@@ -5,8 +5,9 @@
     <classes>
       <class name="AutomationOnboarding.Login">
         <methods>
-          <include name="registrationSelectionFunction"/>
+          <include name="registrationSelectionFunction" invocation-numbers="1 2 3 4 5"/>
           <include name="setUp"/>
+          <include name="testlogout"/>
         </methods>
       </class> <!-- AutomationOnboarding.Login -->
     </classes>

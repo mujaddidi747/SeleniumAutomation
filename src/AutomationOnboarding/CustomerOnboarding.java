@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.Alert;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
@@ -36,7 +36,7 @@ public class  CustomerOnboarding {
 	
 	public boolean onboardingCorporateGroup(WebDriver driver, String accountTitle,
 			String sellerCODE, String nameCnic, String motherName,
-			String fatherName, String placeofBirth, String identityNumber ,String permanentAddress,
+			String fatherName, String placeofBirth, String identityType,String identityNumber ,String permanentAddress,
 			String permanentCity, String mailingAddress, String mailingCity, String email,
 			String accountHolderMN, String actualOwner, String beneficialCnic,
 			String expectedCredit, String monthlyExpectedWithdrawal,
@@ -73,7 +73,7 @@ public class  CustomerOnboarding {
 		if(selectCustomerType.getFirstSelectedOption().getText().equals("Corporate Account Master Wallet")){
 
 			onboardingCorporateGroupMasterWallet(accountTitle,  sellerCODE	,
-					nameCnic	, motherName, 	fatherName	,  placeofBirth, identityNumber, 	permanentAddress,	 permanentCity,	
+					nameCnic	, motherName, 	fatherName	,  placeofBirth, identityNumber, identityType,	permanentAddress,	 permanentCity,	
 					mailingAddress, 	mailingCity, email,	accountHolderMN,  actualOwner, 
 					beneficialCnic, 
 					expectedCredit, 	monthlyExpectedWithdrawal, 	expectedDebit	,  monthlyExpectedDeposit,
@@ -84,7 +84,7 @@ public class  CustomerOnboarding {
 		}else if(selectCustomerType.getFirstSelectedOption().getText().equals("Corporate Sim Sim Account User")){
 
 			onboardingCorporateGroupMasterWallet(accountTitle,  sellerCODE	,
-					nameCnic	, motherName, 	fatherName	,  placeofBirth, identityNumber, 	permanentAddress,	 permanentCity,	
+					nameCnic	, motherName, 	fatherName	,  placeofBirth,identityType, identityNumber, 	permanentAddress,	 permanentCity,	
 					mailingAddress, 	mailingCity, email,	accountHolderMN,  actualOwner, 
 					beneficialCnic, 
 					expectedCredit, 	monthlyExpectedWithdrawal, 	expectedDebit	,  monthlyExpectedDeposit,
@@ -104,7 +104,7 @@ public class  CustomerOnboarding {
 			premises.selectByVisibleText("OWNED");
 			
 			onboardingCorporateGroupMasterWallet(accountTitle,  sellerCODE	,
-					nameCnic	, motherName, 	fatherName	,  placeofBirth, identityNumber, 	permanentAddress,	 permanentCity,	
+					nameCnic	, motherName, 	fatherName	,  placeofBirth,identityType, identityNumber, 	permanentAddress,	 permanentCity,	
 					mailingAddress, 	mailingCity, email,	accountHolderMN,  actualOwner, 
 					beneficialCnic, 
 					expectedCredit, 	monthlyExpectedWithdrawal, 	expectedDebit	,  monthlyExpectedDeposit,
@@ -115,7 +115,7 @@ public class  CustomerOnboarding {
 		}else if(selectCustomerType.getFirstSelectedOption().getText().equals("Agent finca")){
 			
 			onboardingCorporateGroupMasterWallet(accountTitle,  sellerCODE	,
-					nameCnic	, motherName, 	fatherName	,  placeofBirth, identityNumber, 	permanentAddress,	 permanentCity,	
+					nameCnic	, motherName, 	fatherName	,  placeofBirth, identityType,identityNumber, 	permanentAddress,	 permanentCity,	
 					mailingAddress, 	mailingCity, email,	accountHolderMN,  actualOwner, 
 					beneficialCnic, 
 					expectedCredit, 	monthlyExpectedWithdrawal, 	expectedDebit	,  monthlyExpectedDeposit,
@@ -133,7 +133,7 @@ public class  CustomerOnboarding {
 	
 	// using data providers
 		public boolean onboardingCorporateGroupMasterWallet(String accountTitle, String SellerCODE	,
-			String NameCnic	,String motherName, String	FatherName	, String PlaceofBirth, String identityNumber, String 	PermanentAddress,	String PermanentCity,	
+			String NameCnic	,String motherName, String	FatherName	, String PlaceofBirth, String identityType, String identityNumber, String 	PermanentAddress,	String PermanentCity,	
 			String MailingAddress, String	MailingCity, String email, String	AccountHolderMN, String ActualOwner, 
 			String	beneficialCnic, 
 			String	expectedCredit, String	monthlyExpectedWithdrawal, String	expectedDebit	, String monthlyExpectedDeposit,
@@ -174,7 +174,7 @@ public class  CustomerOnboarding {
 
 			Thread.sleep(500);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		} 
 
@@ -185,7 +185,7 @@ public class  CustomerOnboarding {
 
 			Thread.sleep(500);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		
@@ -196,7 +196,7 @@ public class  CustomerOnboarding {
 
 			Thread.sleep(500);
 		}catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		} 
 
@@ -309,7 +309,7 @@ public class  CustomerOnboarding {
 
 			Thread.sleep(500);
 		}catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		} 
 		
@@ -336,7 +336,7 @@ public class  CustomerOnboarding {
 
 	public boolean onBoardingL2Group(WebDriver driver,String accountTitle, 
 			String accountNumber, String nVerification, String motherName, 
-			String fatherName, String POB, String gender,String nationality,String identityNumber, String permanentAddress,
+			String fatherName, String POB, String gender,String nationality,String identityType,String pProvince,String mProvince,String identityNumber, String permanentAddress,
 			String permanentCity, String mailingAddress, String mailingCity, String Name, String CNIC, String contactNumber, String residency
 			, String address,String ActualOwner, String BenificiaryCNIC, String ExpextedMonthlyNoTransactionCR, String ExpextedMonthlyAmtTransactionDB,
 			String ExpextedMonthlyAmtTransactionCR, String ExpextedMonthlyNoTransactionDB, String AvgYearlyIncome, String AvgYearlySales, String ntn,
@@ -365,7 +365,7 @@ public class  CustomerOnboarding {
 
 			onBoardingL2(accountTitle, 
 					accountNumber, nVerification,  motherName, 
-					fatherName,  POB, gender,nationality, identityNumber,  permanentAddress,
+					fatherName,  POB, gender,nationality, identityType,pProvince,mProvince,identityNumber,  permanentAddress,
 					permanentCity,  mailingAddress,  mailingCity,  Name,  CNIC,  contactNumber,  residency
 					,  address, ActualOwner,  BenificiaryCNIC,  ExpextedMonthlyNoTransactionCR,  ExpextedMonthlyAmtTransactionCR,
 					ExpextedMonthlyAmtTransactionDB,  ExpextedMonthlyNoTransactionDB,  AvgYearlyIncome,  AvgYearlySales,  ntn,
@@ -375,7 +375,7 @@ public class  CustomerOnboarding {
 
 			onBoardingL2(accountTitle, 
 					accountNumber,nVerification,  motherName, 
-					fatherName,  POB, gender,nationality, identityNumber,  permanentAddress,
+					fatherName,  POB, gender,nationality,identityType,pProvince,mProvince, identityNumber,  permanentAddress,
 					permanentCity,  mailingAddress,  mailingCity,  Name,  CNIC,  contactNumber,  residency
 					,  address, ActualOwner,  BenificiaryCNIC,  ExpextedMonthlyNoTransactionCR,  ExpextedMonthlyAmtTransactionCR,
 					ExpextedMonthlyAmtTransactionDB,  ExpextedMonthlyNoTransactionDB,  AvgYearlyIncome,  AvgYearlySales,  ntn,
@@ -384,7 +384,7 @@ public class  CustomerOnboarding {
 		}else if(selectCustomerType.getFirstSelectedOption().getText().equals("L2-Individual-10000")){
 			onBoardingL2(accountTitle, 
 					accountNumber,nVerification,  motherName, 
-					fatherName,  POB, gender,nationality,identityNumber,  permanentAddress,
+					fatherName,  POB, gender,nationality,identityType,pProvince,mProvince,identityNumber,  permanentAddress,
 					permanentCity,  mailingAddress,  mailingCity,  Name,  CNIC,  contactNumber,  residency
 					,  address, ActualOwner,  BenificiaryCNIC,  ExpextedMonthlyNoTransactionCR,  ExpextedMonthlyAmtTransactionCR,
 					ExpextedMonthlyAmtTransactionDB,  ExpextedMonthlyNoTransactionDB,  AvgYearlyIncome,  AvgYearlySales,  ntn,
@@ -394,7 +394,7 @@ public class  CustomerOnboarding {
 
 			onBoardingL2(accountTitle, 
 					accountNumber,nVerification,  motherName, 
-					fatherName,  POB, gender, nationality,identityNumber,  permanentAddress,
+					fatherName,  POB, gender, nationality,identityType,pProvince,mProvince,identityNumber,  permanentAddress,
 					permanentCity,  mailingAddress,  mailingCity,  Name,  CNIC,  contactNumber,  residency
 					,  address, ActualOwner,  BenificiaryCNIC,  ExpextedMonthlyNoTransactionCR,  ExpextedMonthlyAmtTransactionCR,
 					ExpextedMonthlyAmtTransactionDB,  ExpextedMonthlyNoTransactionDB,  AvgYearlyIncome,  AvgYearlySales,  ntn,
@@ -405,7 +405,7 @@ public class  CustomerOnboarding {
 
 			onBoardingL2(accountTitle, 
 					accountNumber,nVerification,  motherName, 
-					fatherName,  POB, gender, nationality,identityNumber,  permanentAddress,
+					fatherName,  POB, gender, nationality,identityType,pProvince,mProvince,identityNumber,  permanentAddress,
 					permanentCity,  mailingAddress,  mailingCity,  Name,  CNIC,  contactNumber,  residency
 					,  address, ActualOwner,  BenificiaryCNIC,  ExpextedMonthlyNoTransactionCR,  ExpextedMonthlyAmtTransactionCR,
 					ExpextedMonthlyAmtTransactionDB,  ExpextedMonthlyNoTransactionDB,  AvgYearlyIncome,  AvgYearlySales,  ntn,
@@ -415,7 +415,7 @@ public class  CustomerOnboarding {
 
 			onBoardingL2(accountTitle, 
 					accountNumber, nVerification, motherName, 
-					fatherName,  POB, gender,nationality,identityNumber,  permanentAddress,
+					fatherName,  POB, gender,nationality,identityType,pProvince,mProvince,identityNumber,  permanentAddress,
 					permanentCity,  mailingAddress,  mailingCity,  Name,  CNIC,  contactNumber,  residency
 					,  address, ActualOwner,  BenificiaryCNIC,  ExpextedMonthlyNoTransactionCR,  ExpextedMonthlyAmtTransactionCR,
 					ExpextedMonthlyAmtTransactionDB,  ExpextedMonthlyNoTransactionDB,  AvgYearlyIncome,  AvgYearlySales,  ntn,
@@ -425,7 +425,7 @@ public class  CustomerOnboarding {
 
 			onBoardingL2(accountTitle, 
 					accountNumber, nVerification, motherName, 
-					fatherName,  POB, gender,nationality, identityNumber,  permanentAddress,
+					fatherName,  POB, gender,nationality,identityType,pProvince,mProvince, identityNumber,  permanentAddress,
 					permanentCity,  mailingAddress,  mailingCity,  Name,  CNIC,  contactNumber,  residency
 					,  address, ActualOwner,  BenificiaryCNIC,  ExpextedMonthlyNoTransactionCR,  ExpextedMonthlyAmtTransactionCR,
 					ExpextedMonthlyAmtTransactionDB,  ExpextedMonthlyNoTransactionDB,  AvgYearlyIncome,  AvgYearlySales,  ntn,
@@ -435,7 +435,7 @@ public class  CustomerOnboarding {
 
 			onBoardingL2(accountTitle, 
 					accountNumber, nVerification, motherName, 
-					fatherName,  POB, gender, nationality,identityNumber,  permanentAddress,
+					fatherName,  POB, gender, nationality,identityType,pProvince,mProvince,identityNumber,  permanentAddress,
 					permanentCity,  mailingAddress,  mailingCity,  Name,  CNIC,  contactNumber,  residency
 					,  address, ActualOwner,  BenificiaryCNIC,  ExpextedMonthlyNoTransactionCR,  ExpextedMonthlyAmtTransactionCR,
 					ExpextedMonthlyAmtTransactionDB,  ExpextedMonthlyNoTransactionDB,  AvgYearlyIncome,  AvgYearlySales,  ntn,
@@ -445,7 +445,7 @@ public class  CustomerOnboarding {
 
 			onBoardingL2(accountTitle, 
 					accountNumber, nVerification, motherName, 
-					fatherName,  POB, gender, nationality,identityNumber,  permanentAddress,
+					fatherName,  POB, gender, nationality,identityType,pProvince,mProvince,identityNumber,  permanentAddress,
 					permanentCity,  mailingAddress,  mailingCity,  Name,  CNIC,  contactNumber,  residency
 					,  address, ActualOwner,  BenificiaryCNIC,  ExpextedMonthlyNoTransactionCR,  ExpextedMonthlyAmtTransactionCR,
 					ExpextedMonthlyAmtTransactionDB,  ExpextedMonthlyNoTransactionDB,  AvgYearlyIncome,  AvgYearlySales,  ntn,
@@ -457,7 +457,7 @@ public class  CustomerOnboarding {
 
 			onBoardingL2(accountTitle, 
 					accountNumber, nVerification,  motherName, 
-					fatherName,  POB, gender,nationality,identityNumber,  permanentAddress,
+					fatherName,  POB, gender,nationality, identityType,pProvince,mProvince,identityNumber,  permanentAddress,
 					permanentCity,  mailingAddress,  mailingCity,  Name,  CNIC,  contactNumber,  residency
 					,  address, ActualOwner,  BenificiaryCNIC,  ExpextedMonthlyNoTransactionCR,  ExpextedMonthlyAmtTransactionCR,
 					ExpextedMonthlyAmtTransactionDB,  ExpextedMonthlyNoTransactionDB,  AvgYearlyIncome,  AvgYearlySales,  ntn,
@@ -473,7 +473,7 @@ public class  CustomerOnboarding {
 
 	public boolean onBoardingL2(String accountTitle, 
 			String accountNumber, String nVerification, String motherName, 
-			String fatherName, String POB, String gender, String nationality, String identityNumber, String permanentAddress,
+			String fatherName, String POB, String gender, String nationality, String identityType,String pProvince,String mProvince,String identityNumber, String permanentAddress,
 			String permanentCity, String mailingAddress, String mailingCity, String Name, String CNIC, String contactNumber, String residency
 			, String address,String ActualOwner, String BenificiaryCNIC, String ExpextedMonthlyNoTransactionCR, String ExpextedMonthlyAmtTransactionCR,
 			String ExpextedMonthlyAmtTransactionDB, String ExpextedMonthlyNoTransactionDB, String AvgYearlyIncome, String AvgYearlySales, String ntn,
@@ -598,7 +598,7 @@ public class  CustomerOnboarding {
 		
 		
 		onBoardingcustomerl0(accountTitle, accountNumber, nVerification, motherName, fatherName, 
-				POB, gender,nationality,identityNumber, permanentAddress, permanentCity, mailingAddress, mailingCity);
+				POB, gender,nationality, identityType,pProvince, mProvince,identityNumber, permanentAddress, permanentCity, mailingAddress, mailingCity);
 		
 		return true;
 	}
@@ -609,11 +609,12 @@ public class  CustomerOnboarding {
 	
 	public boolean onBoarding(WebDriver driver, 
 			String accountTitle, String accountNumber, String nVerification, String motherName,
-			String fatherName, String POB, String gender, String nationality,String identityNumber, String permanentAddress, 
+			String fatherName, String POB, String gender, String nationality,String identityType, String pProvince, String mProvince,String identityNumber, String permanentAddress, 
 			String permanentCity, String mailingAddress, String mailingCity,String customerType) throws InterruptedException, IOException{
-
+/*
 		sub_menu = Login.driver.findElement(By.xpath("/html/body/div/div[3]/div[3]/ul[1]/span/span[6]/li/span"));
-		sub_menu1 = Login.driver.findElement(By.xpath("/html/body/div/div[3]/div[3]/ul[1]/span/span[6]/li/ul/span[1]/li/a/span"));
+		sub_menu1 = Login.driver.findElement(By.xpath("/html/body/div/div[3]/div[3]/ul[1]/span/span[6]/li/ul/span[1]/li/a/span"));*/
+		
 		Utility.getActionsObject_submenu_homepage(driver, sub_menu, sub_menu1);
 
 		// selecting the dropdown	     
@@ -635,46 +636,46 @@ public class  CustomerOnboarding {
 		//IF LO IS SELECTED
 		if(selectCustomerType.getFirstSelectedOption().getText().equals("L0")){
 		
-			onBoardingcustomerl0(accountTitle, accountNumber,nVerification, motherName, fatherName, POB, gender,nationality,identityNumber, permanentAddress, permanentCity, mailingAddress, mailingCity);	
+			onBoardingcustomerl0(accountTitle, accountNumber,nVerification, motherName, fatherName, POB, gender,nationality,identityType,pProvince,mProvince,identityNumber, permanentAddress, permanentCity, mailingAddress, mailingCity);	
 
 		}else if(selectCustomerType.getFirstSelectedOption().getText().equals("L1 Corporate SimSim User")){
 			
-			OnBoardingL1CorporateUser(accountTitle, accountNumber,nVerification, motherName, fatherName, POB,gender,nationality, identityNumber, permanentAddress, permanentCity, mailingAddress, mailingCity);
+			OnBoardingL1CorporateUser(accountTitle, accountNumber,nVerification, motherName, fatherName, POB,gender,nationality,identityType,pProvince,mProvince, identityNumber, permanentAddress, permanentCity, mailingAddress, mailingCity);
 		
 		}else if(selectCustomerType.getFirstSelectedOption().getText().equals("L1 Guest Corporate SimSim User")){
 
-			OnBoardingL1GuestCorporateSimSim (accountTitle,  accountNumber,  nVerification,  motherName,  fatherName,  POB, gender,nationality,identityNumber,  permanentAddress,  permanentCity,  mailingAddress,  mailingCity);
+			OnBoardingL1GuestCorporateSimSim (accountTitle,  accountNumber,  nVerification,  motherName,  fatherName,  POB, gender,nationality,identityType,pProvince,mProvince,identityNumber,  permanentAddress,  permanentCity,  mailingAddress,  mailingCity);
 		}
 		//IF L0 BVS CORPORATE USER IS SELECTED
 		else if(selectCustomerType.getFirstSelectedOption().getText().equals("L0 BVS CORPORATE USER")){
 
-			onBoardingL0bvsCorporateUser(accountTitle,  accountNumber,  nVerification,  motherName,  fatherName,  POB, gender,nationality, identityNumber,  permanentAddress,  permanentCity,  mailingAddress,  mailingCity);
+			onBoardingL0bvsCorporateUser(accountTitle,  accountNumber,  nVerification,  motherName,  fatherName,  POB, gender,nationality, identityType,pProvince,mProvince,identityNumber,  permanentAddress,  permanentCity,  mailingAddress,  mailingCity);
 		}
 		// IF Remote Zero - Digital Transaction IS SELECTED
 		else if(selectCustomerType.getFirstSelectedOption().getText().equals("Remote Zero - Digital Transaction")){
 
-			onBoardingRemoteZeroDigitalTransaction(accountTitle, accountNumber, nVerification, motherName, fatherName, POB, gender,nationality,identityNumber, permanentAddress, permanentCity, mailingAddress, mailingCity);
+			onBoardingRemoteZeroDigitalTransaction(accountTitle, accountNumber, nVerification, motherName, fatherName, POB, gender,nationality,identityType,pProvince,mProvince,identityNumber, permanentAddress, permanentCity, mailingAddress, mailingCity);
 		}
 		//IF Remote Zero - Corporate Sim Sim User IS SELECTED
 		else if(selectCustomerType.getFirstSelectedOption().getText().equals("Remote Zero - Corporate Sim Sim User")){
 
-			onBoardingRemoteZeroCorporateSimSimUser(accountTitle,  accountNumber,  nVerification, motherName,  fatherName,  POB, gender,nationality, identityNumber,  permanentAddress,  permanentCity,  mailingAddress,  mailingCity);
+			onBoardingRemoteZeroCorporateSimSimUser(accountTitle,  accountNumber,  nVerification, motherName,  fatherName,  POB, gender,nationality,identityType,pProvince,mProvince, identityNumber,  permanentAddress,  permanentCity,  mailingAddress,  mailingCity);
 
 		}else if (selectCustomerType.getFirstSelectedOption().getText().equals("Guest D/C Block User")){
 
-			onBoardingGuestDCUser(accountTitle,  accountNumber, nVerification, motherName,  fatherName,  POB, gender,nationality,identityNumber,  permanentAddress,  permanentCity,  mailingAddress,  mailingCity);
+			onBoardingGuestDCUser(accountTitle,  accountNumber, nVerification, motherName,  fatherName,  POB, gender,nationality,identityType,pProvince,mProvince,identityNumber,  permanentAddress,  permanentCity,  mailingAddress,  mailingCity);
 
 		}else if (selectCustomerType.getFirstSelectedOption().getText().equals("L1")) {
 		
-			onBoardingL1( accountTitle,  accountNumber,  nVerification, motherName,  fatherName,  POB, gender,nationality, identityNumber,  permanentAddress,  permanentCity,  mailingAddress,  mailingCity);
+			onBoardingL1( accountTitle,  accountNumber,  nVerification, motherName,  fatherName,  POB, gender,nationality,identityType,pProvince, mProvince,identityNumber,  permanentAddress,  permanentCity,  mailingAddress,  mailingCity);
 		
 		}else if(selectCustomerType.getFirstSelectedOption().getText().equals("L0 BVS User")){
 
-			onBoardingL0bvs( accountTitle,  accountNumber, nVerification,  motherName,  fatherName, POB, gender, nationality,identityNumber,  permanentAddress,  permanentCity,  mailingAddress,  mailingCity);
+			onBoardingL0bvs( accountTitle,  accountNumber, nVerification,  motherName,  fatherName, POB, gender, nationality,identityType,pProvince,mProvince,identityNumber,  permanentAddress,  permanentCity,  mailingAddress,  mailingCity);
 		
 		}else if(selectCustomerType.getFirstSelectedOption().getText().equals("Merchant Headquarter")){
 
-			merchantHeadquarter( accountTitle,  accountNumber, nVerification, motherName,  fatherName,  POB, gender, nationality, identityNumber,  permanentAddress,  permanentCity,  mailingAddress,  mailingCity);
+			merchantHeadquarter( accountTitle,  accountNumber, nVerification, motherName,  fatherName,  POB, gender, nationality, identityType,pProvince, mProvince, identityNumber,  permanentAddress,  permanentCity,  mailingAddress,  mailingCity);
 		}
 
 		return true;
@@ -683,7 +684,8 @@ public class  CustomerOnboarding {
 	////////////////////////////////////////////////////////
 
 	public boolean onBoardingcustomerl0(String accountTitle, String accountNumber, String nVerification,
-			String motherName, String fatherName, String POB, String gender, String nationality,String identityNumber, String permanentAddress, 
+			String motherName, String fatherName, String POB, String gender, String nationality, String identityType, 
+			String pProvince, String mProvince,String identityNumber, String permanentAddress, 
 			String permanentCity, String mailingAddress, String mailingCity) throws IOException{
 
 		Login.driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[4]/div/div[2]/div[2]/form/div[3]/div[1]/div[2]/input")).sendKeys(accountTitle);
@@ -730,14 +732,14 @@ public class  CustomerOnboarding {
 
 		// Identity Information of USER
 		Select ID = new Select(Login.driver.findElement(By.id("kvIdentityType")));
-		ID.selectByIndex(2);
+		ID.selectByVisibleText(identityType);
 
 		Select education = new Select(Login.driver.findElement(By.id("education")));
 		education.selectByIndex(2);
 
 		//province
 		Select province = new Select(Login.driver.findElement(By.id("permanentState")));
-		province.selectByIndex(2);
+		province.selectByVisibleText(pProvince);
 
 		//mailing province
 		Select MailingProvince = new Select(Login.driver.findElement(By.id("mailingOrBusinessState")));
@@ -754,7 +756,7 @@ public class  CustomerOnboarding {
 
 			Thread.sleep(500);
 		}catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+		
 			e.printStackTrace();
 		} 
 
@@ -765,7 +767,7 @@ public class  CustomerOnboarding {
 
 			Thread.sleep(500);
 		}catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		try {
@@ -775,7 +777,7 @@ public class  CustomerOnboarding {
 
 			Thread.sleep(500);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		} 
 		
@@ -798,12 +800,12 @@ public class  CustomerOnboarding {
 	
 	//L1 CORPORATE USER
 	public boolean OnBoardingL1CorporateUser(String accountTitle, String accountNumber, String nVerification, String motherName, 
-			String fatherName, String POB, String gender, String nationality,
+			String fatherName, String POB, String gender, String nationality, String identityType, String pProvince,String mProvince,
 			String identityNumber, String permanentAddress, 
 			String permanentCity, String mailingAddress, 
 			String mailingCity) throws InterruptedException, IOException{
 
-		onBoardingcustomerl0(accountTitle, accountNumber, nVerification, motherName, fatherName, POB, gender, nationality, identityNumber, permanentAddress, permanentCity, mailingAddress, mailingCity);
+		onBoardingcustomerl0(accountTitle, accountNumber, nVerification, motherName, fatherName, POB, gender, nationality, identityType,pProvince, mProvince,identityNumber, permanentAddress, permanentCity, mailingAddress, mailingCity);
 		
 		Login.driver.findElement(By.id("employerName")).sendKeys("AutoSoft Dynamics");
 		WebElement OtherCheckBox = Login.driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[4]/div/div[2]/div[2]/form/div[3]/div[6]/div[4]/div[3]/div/div/div[1]/div/table/tbody/tr[2]/td/input"));
@@ -822,10 +824,11 @@ public class  CustomerOnboarding {
 	
 	//L1GUESTCORPORATESIMSIM USER
 	public boolean OnBoardingL1GuestCorporateSimSim (String accountTitle, String accountNumber, 
-			String nVerification,String motherName, String fatherName, String POB, String gender, String nationality,
+			String nVerification,String motherName, String fatherName, String POB, String gender, String nationality, String identityType, String pProvince,String mProvince,
 			String identityNumber, String permanentAddress, String permanentCity, String mailingAddress, String mailingCity) throws IOException {
 
-		onBoardingcustomerl0(accountTitle, accountNumber, nVerification, motherName, fatherName, POB, gender, nationality, identityNumber, permanentAddress, permanentCity, mailingAddress, mailingCity);
+		onBoardingcustomerl0(accountTitle, accountNumber, nVerification, motherName, fatherName, POB, gender, 
+				nationality, pProvince,  mProvince,identityType,identityNumber, permanentAddress, permanentCity, mailingAddress, mailingCity);
 
 		Login.driver.findElement(By.id("employerName")).sendKeys("AutoSoft Dynamics");
 		WebElement OtherCheckBox = Login.driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[4]/div/div[2]/div[2]/form/div[3]/div[6]/div[4]/div[3]/div/div/div[1]/div/table/tbody/tr[2]/td/input"));
@@ -844,26 +847,29 @@ public class  CustomerOnboarding {
 	
 	//ON BOARDING RemoteZeroCorporateSimSimUser
 	public boolean onBoardingRemoteZeroDigitalTransaction(String accountTitle, String accountNumber, String nVerification, String motherName, 
-			String fatherName, String POB, String gender, String nationality,String identityNumber, String permanentAddress, String permanentCity, String mailingAddress, String mailingCity) throws IOException {
-		onBoardingcustomerl0(accountTitle, accountNumber, nVerification , motherName, fatherName, POB, gender, nationality,identityNumber, permanentAddress, permanentCity, mailingAddress, mailingCity);
+			String fatherName, String POB, String gender, String nationality, String identityType, String pProvince,
+			String mProvince,String identityNumber, String permanentAddress, String permanentCity, String mailingAddress, String mailingCity) throws IOException {
+		onBoardingcustomerl0(accountTitle, accountNumber, nVerification , motherName, fatherName, POB, gender, nationality, 
+				identityType, pProvince, mProvince,identityNumber, permanentAddress, permanentCity, mailingAddress, mailingCity);
 		return true;
 
 	}
 	////////////////////////////////////////////////////////
 	
 	public boolean onBoardingGuestDCUser(String accountTitle, String accountNumber,  String nVerification,String motherName, String fatherName, String POB,String gender,
-			String nationality,String identityNumber, String permanentAddress, String permanentCity, String mailingAddress, String mailingCity ) throws IOException{
+			String nationality, String identityType, String pProvince,String mProvince,String identityNumber, String permanentAddress, String permanentCity, String mailingAddress, String mailingCity ) throws IOException{
 
-		onBoardingcustomerl0(accountTitle, accountNumber, nVerification, motherName, fatherName, POB, gender, nationality, identityNumber, permanentAddress, permanentCity, mailingAddress, mailingCity);
+		onBoardingcustomerl0(accountTitle, accountNumber, nVerification, motherName, fatherName, POB, gender, nationality, identityType, pProvince, mProvince, identityNumber, permanentAddress, permanentCity, mailingAddress, mailingCity);
 		return true;
 	} 
 
 	////////////////////////////////////////////////////////
 	
 	public boolean onBoardingRemoteZeroCorporateSimSimUser( String accountTitle, String accountNumber, String nVerification, String motherName, String fatherName, String POB, String gender,
-			String nationality,String identityNumber, String permanentAddress, String permanentCity, String mailingAddress, String mailingCity) throws IOException {
+			String nationality, String identityType, String pProvince, String mProvince,String identityNumber, String permanentAddress, String permanentCity, String mailingAddress, String mailingCity) throws IOException {
 
-		onBoardingcustomerl0(accountTitle, accountNumber, nVerification,motherName, fatherName, POB, gender, nationality,identityNumber, permanentAddress, permanentCity, mailingAddress, mailingCity);
+		onBoardingcustomerl0(accountTitle, accountNumber, nVerification,motherName, fatherName, POB, gender, nationality, 
+				identityType, pProvince,  mProvince,identityNumber, permanentAddress, permanentCity, mailingAddress, mailingCity);
 		return true;
 
 	}
@@ -872,9 +878,9 @@ public class  CustomerOnboarding {
 	
 	//ONBOARDING AGENT FINCA BRANCH
 	public boolean onBoardingL1(String accountTitle, String accountNumber, String nVerification, String motherName, String fatherName, String POB, String gender,
-			String nationality,String identityNumber, String permanentAddress, String permanentCity, String mailingAddress, String mailingCity) throws IOException{
+			String nationality, String identityType, String pProvince,String mProvince,String identityNumber, String permanentAddress, String permanentCity, String mailingAddress, String mailingCity) throws IOException{
 
-		onBoardingcustomerl0(accountTitle, accountNumber, nVerification, motherName, fatherName, POB, gender, nationality,identityNumber, permanentAddress, permanentCity, mailingAddress, mailingCity);			
+		onBoardingcustomerl0(accountTitle, accountNumber, nVerification, motherName, fatherName, POB, gender, nationality, identityType, pProvince, mProvince,identityNumber, permanentAddress, permanentCity, mailingAddress, mailingCity);			
 		return true;
 
 	}
@@ -882,11 +888,11 @@ public class  CustomerOnboarding {
 	////////////////////////////////////////////////////////
 	
 	public boolean merchantHeadquarter(String accountTitle, String accountNumber, String nVerification,
-			String motherName, String fatherName, String POB, String gender, String nationality,
+			String motherName, String fatherName, String POB, String gender, String nationality, String identityType, String pProvince, String mProvince,
 			String identityNumber, String permanentAddress,
 			String permanentCity, String mailingAddress, String mailingCity) throws IOException {
 
-		onBoardingcustomerl0(accountTitle, accountNumber, nVerification, motherName, fatherName, POB, gender, nationality, identityNumber, permanentAddress, permanentCity, mailingAddress, mailingCity);
+		onBoardingcustomerl0(accountTitle, accountNumber, nVerification, motherName, fatherName, POB, gender, nationality,  identityType,pProvince, mProvince, identityNumber, permanentAddress, permanentCity, mailingAddress, mailingCity);
 		return true;
 
 	}
@@ -894,11 +900,12 @@ public class  CustomerOnboarding {
 	////////////////////////////////////////////////////////
 	
 	public boolean onBoardingL0bvs(String accountTitle, String accountNumber, String nVerification,
-			String motherName, String fatherName, String POB, String gender, String nationality,
+			String motherName, String fatherName, String POB, String gender, String nationality, String identityType, String pProvince,String mProvince,
 			String identityNumber, String permanentAddress,
 			String permanentCity, String mailingAddress, String mailingCity) throws IOException {
 
-		onBoardingcustomerl0(accountTitle, accountNumber, nVerification, motherName, fatherName, POB, gender, nationality, identityNumber, permanentAddress, permanentCity, mailingAddress, mailingCity);
+		onBoardingcustomerl0(accountTitle, accountNumber, nVerification, motherName, fatherName, POB, gender, nationality 
+				,identityType, pProvince, mProvince,identityNumber, permanentAddress, permanentCity, mailingAddress, mailingCity);
 		return true;
 	}
 
@@ -906,10 +913,10 @@ public class  CustomerOnboarding {
 	
 	public boolean onBoardingL0bvsCorporateUser(String accountTitle, 
 			String accountNumber, String nVerification, String motherName, 
-			String fatherName, String POB, String gender, String nationality,String identityNumber, String permanentAddress,
+			String fatherName, String POB, String gender, String nationality, String identityType, String pProvince, String mProvince,String identityNumber, String permanentAddress,
 			String permanentCity, String mailingAddress, String mailingCity) throws IOException {
 
-		onBoardingcustomerl0(accountTitle, accountNumber, nVerification,motherName, fatherName, POB, gender, nationality,  identityNumber, permanentAddress, permanentCity, mailingAddress, mailingCity);
+		onBoardingcustomerl0(accountTitle, accountNumber, nVerification,motherName, fatherName, POB, gender, nationality, identityType, pProvince,  mProvince, identityNumber, permanentAddress, permanentCity, mailingAddress, mailingCity);
 		return true;	
 	}
 
