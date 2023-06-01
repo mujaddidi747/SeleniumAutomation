@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+  <test verbose="2" name="Default test">
+    <classes>
+      <class name="AutomationOnboarding.Login"/>
+    </classes>
+  </test> <!-- Default test -->
+  <test name="Default test(failed)">
     <classes>
       <class name="AutomationOnboarding.Login">
         <methods>
-          <include name="registrationSelectionFunction" invocation-numbers="2 3"/>
-          <include name="setUp"/>
+          <include name="registrationSelectionFunction"/>
         </methods>
       </class> <!-- AutomationOnboarding.Login -->
     </classes>

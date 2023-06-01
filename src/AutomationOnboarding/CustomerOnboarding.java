@@ -659,7 +659,8 @@ public class  CustomerOnboarding {
 		//IF Remote Zero - Corporate Sim Sim User IS SELECTED
 		else if(selectCustomerType.getFirstSelectedOption().getText().equals("Remote Zero - Corporate Sim Sim User")){
 
-			onBoardingRemoteZeroCorporateSimSimUser(accountTitle,  accountNumber,  nVerification, motherName,  fatherName,  POB, gender,nationality,identityType,pProvince,mProvince, identityNumber,  permanentAddress,  permanentCity,  mailingAddress,  mailingCity);
+			onBoardingRemoteZeroCorporateSimSimUser(accountTitle,  accountNumber,  nVerification, motherName,  fatherName,  POB, gender
+		,nationality,identityType,pProvince,mProvince, identityNumber,  permanentAddress,  permanentCity,  mailingAddress,  mailingCity);
 
 		}else if (selectCustomerType.getFirstSelectedOption().getText().equals("Guest D/C Block User")){
 
